@@ -3,7 +3,7 @@ const Activity = require('../modals/Activity');
 module.exports = {
     async index(req, res) {
 
-        
+
         const data = await Activity.findAll();
 
         if (data == "" || data == null) {
@@ -37,7 +37,7 @@ module.exports = {
         })
 
     },
-    
+
 
     async update(req, res) {
         const { name, status } = req.body;

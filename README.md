@@ -30,23 +30,24 @@ Comands:
 
 1ºINSTALL DEPENDENCY
 
-USED YARN
-$ yarn add yarn
+#USED YARN
+    $ yarn add yarn
 
-USED NPM
-$ npm install 
+#USED NPM
+    $ npm install 
 
 
 2ºMOGRATE THE DATABASE SQLITE
 
 
-USED YARN
-$ yarn sequelize db:migrate
+#USED YARN
+    $ yarn sequelize db:migrate
 
-USED NPM
-$ npx sequelize db:migrate
+#USED NPM
+    $ npx sequelize db:migrate
 
-3º RUM
-$ node src/server.js
+3º RUN
+
+    $ node src/server.js
 
 

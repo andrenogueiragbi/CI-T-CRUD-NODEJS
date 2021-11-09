@@ -1,3 +1,4 @@
 /node_modules
-DB_SERVER.SQL
+DB_SERVER
+*SQL
 

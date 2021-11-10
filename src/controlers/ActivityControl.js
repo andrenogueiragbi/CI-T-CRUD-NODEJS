@@ -61,7 +61,7 @@ module.exports = {
         });
 
         return res.status(200).send({
-            status: 1,
+            erro: false,
             message: "Activity update with success"
         });
 

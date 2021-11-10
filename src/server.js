@@ -11,6 +11,6 @@ app.use(express.json());
 app.use(morgan('combined'));
 
 app.use(routes);
-app.listen(5000, () =>{
+app.listen(process.env.PORT || 5000, () =>{
     console.log("Rodando n porta 5000 \\O/.")
 })

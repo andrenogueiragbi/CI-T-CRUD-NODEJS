@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 /*
 ##TO SQLITE##
 module.exports = {
@@ -13,10 +15,10 @@ module.exports = {
 /*TO POSTGRES*/
 module.exports = {
     dialect: 'postgres',
-    database: 'dcao2805e30p8v',
-    username: 'fpaebpfotautnv',
-    password: '25c5d43384e29274446679c33d11301834ba4538505d7ae9c4eaec5871f05976',
-    host: 'ec2-184-73-198-174.compute-1.amazonaws.com',
+    database: process.env.DATABASE,
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    host: process.env.DB_HOST,
     port: 5432,
     dialectOptions: {
         ssl: { rejectUnauthorized: false }

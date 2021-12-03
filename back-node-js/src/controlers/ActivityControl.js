@@ -11,7 +11,10 @@ module.exports = {
             return res.status(404).send({ 'message': 'Activity not found' });
         }
 
-        return res.status(200).send({ data });
+        return res.status(200).send({ 
+            data,
+            "teste":1
+         });
 
     },
 

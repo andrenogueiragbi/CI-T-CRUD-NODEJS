@@ -1,10 +1,11 @@
 const Activity = require('../modals/Activity');
+require('dotenv').config()
 
 module.exports = {
     async index(req, res) {
-        console.log(res)
+        console.log(">>>>>>>>>>",process.env.DATABASE)
 
-
+        data = await Activity.findAll();
        
 
         if (data == "" || data == null) {

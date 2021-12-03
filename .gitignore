@@ -2,3 +2,4 @@
 /node_modules
 DB_SERVER.SQL
 /DB_SERVER.SQL
+/back-node-js/node_modules/*

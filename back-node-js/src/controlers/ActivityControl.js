@@ -12,8 +12,7 @@ module.exports = {
         }
 
         return res.status(200).send({ 
-            data,
-            "teste":1
+            data
          });
 
     },

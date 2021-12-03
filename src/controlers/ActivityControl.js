@@ -4,7 +4,7 @@ require('dotenv').config()
 module.exports = {
     async index(req, res) {
 
-        data = await Activity.findAll();
+        data = await Activity.findAll({ order: [['id']]});
        
 
         if (data == "" || data == null) {
@@ -13,7 +13,6 @@ module.exports = {
 
         return res.status(200).send({ 
             data,
-            teste: 1
          });
 
     },

@@ -1,21 +1,18 @@
 const Activity = require('../../src/modals/Activity');
 const request = require("supertest");
+const truncate = require("../utils/truncate")
 
 const app = require("../../src/app");
 require('../../src/database')
 
-/*
-describe('Categoria de teste treinee', () => {
-    it('Teste inicial para treino', async () => {
-        const tarefa = await Activity.create({name:"Atividade 01", status: false})
-        expect(tarefa.name).toBe('Atividade 01');
 
-    });
-});
-
-*/
 //FAZ INSERTE VIA BANCO DEDADOS SQLITE E VERIFICA SE API GET VOLTA O DADO QUE FOI INSERIDO
-describe(' TEST API CIT', () => {
+describe(' TEST API CIT - UNIT', () => {
+    beforeEach(async () => {
+        await truncate();
+    });
+
+
     it('MAKE INSERT VIA SQLITE DATABASE AND VERIFY IF API GET RETURNS THE DATA THAT WAS INSERT', async () => {
         const tarefa = await Activity.create({ name: "Atividade 01", status: false })
 
@@ -65,7 +62,6 @@ describe(' TEST API CIT', () => {
 
         const response = await request(app)
             .delete(`/activity/${resultData.dataValues.id}`);
-        console.log(response.body.erro)
 
         expect(response.body.erro).toBeFalsy();
 
@@ -75,9 +71,7 @@ describe(' TEST API CIT', () => {
     it('MAKE INSERT VIA SQLITE DATABASE AND VERIFY IF PUT API UPDATED THE DATA', async () => {
 
         const resultDataID = await Activity.create({ name: "Atividade 04", status: false })
-        const id =  resultDataID.dataValues.id
-
-        console.log(">>>>>>>>>>>>>>",id)
+        const id = resultDataID.dataValues.id
 
         const response = await request(app)
             .put(`/activity/${id}`)
@@ -85,10 +79,9 @@ describe(' TEST API CIT', () => {
                 name: "Atividade 05",
                 status: true
             });
-        
-        console.log(response.body)
+
         const resultData = await Activity.findAll({ where: { id: id } });
-    
+
         expect(resultData[0].dataValues.name).toBe('Atividade 05');
         expect(resultData[0].dataValues.status).toBeTruthy();
 

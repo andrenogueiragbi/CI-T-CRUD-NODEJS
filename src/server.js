@@ -11,8 +11,6 @@ const express = require('express');
 const app = require("./app");
 
 require('./database')
-
-
 app.use(morgan('combined'));
 
 app.use(cors())

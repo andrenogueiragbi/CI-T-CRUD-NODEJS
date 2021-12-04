@@ -1,5 +1,3 @@
 .env
-/node_modules/.env
 DB_SERVER.SQL
-/DB_SERVER.SQL
-/back-node-js/node_modules/*
+/node_modules

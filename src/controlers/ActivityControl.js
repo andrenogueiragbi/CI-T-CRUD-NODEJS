@@ -20,7 +20,7 @@ module.exports = {
     async store(req, res) {
         const { name, status } = req.body;
 
-        console.log(req.body)
+        
 
         if (!name){
             return res.status(400).send({
@@ -30,7 +30,7 @@ module.exports = {
             });
         }
 
-        console.log(req.body)
+        
 
         data = await Activity.findOne({ where: { name: name } })
 
